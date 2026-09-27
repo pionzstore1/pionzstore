@@ -1,0 +1,262 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --brand-primary: #f97316;
+    --brand-secondary: #f59e0b;
+    --brand-dark: #0a0d14;
+    --brand-surface: #121722;
+    --brand-emerald: #10b981;
+    font-family: 'Plus Jakarta Sans', 'Exo 2', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6, .font-heading {
+    font-family: 'Exo 2', 'Cabinet Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+}
+
+/* Custom Tactical Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0d14;
+}
+::-webkit-scrollbar-thumb {
+  background: #232b3d;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #f97316;
+}
+
+/* Hide scrollbar for category and tags row while keeping scroll behavior */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Safe area padding for mobile bottom bar */
+.safe-area-pb {
+  padding-bottom: max(0.5rem, env(safe-area-inset-bottom));
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes pulseSlow {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulseSlow 3s ease-in-out infinite;
+}
+
+/* PIONZ STORE smooth visual layer */
+html { scroll-behavior: smooth; }
+body {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+button, a, input, textarea, select {
+  -webkit-tap-highlight-color: transparent;
+}
+button, a {
+  transition: transform .18s ease, opacity .18s ease, background-color .18s ease,
+              border-color .18s ease, box-shadow .18s ease, color .18s ease;
+}
+button:active { transform: scale(.98); }
+img { image-rendering: auto; }
+
+
+/* PIONZ premium storefront skin */
+.pionz-public {
+  --p-bg: #07090f;
+  --p-surface: #0d111a;
+  --p-surface-2: #111827;
+  --p-line: rgba(255,255,255,.075);
+  --p-muted: #8f9aab;
+  --p-text: #f7f8fb;
+  --p-accent: #7c5cff;
+  --p-accent-2: #a78bfa;
+  min-height: 100vh;
+  background:
+    radial-gradient(900px 420px at 15% -10%, rgba(124,92,255,.16), transparent 60%),
+    radial-gradient(760px 360px at 90% 0%, rgba(56,189,248,.08), transparent 60%),
+    var(--p-bg) !important;
+  color: var(--p-text) !important;
+}
+.pionz-public main { background: transparent !important; }
+.pionz-public section { background-color: transparent; }
+.pionz-public .pionz-container { position: relative; }
+.pionz-public .bg-white,
+.pionz-public .bg-slate-50,
+.pionz-public .bg-\[\#f4f7fb\] {
+  background: rgba(13,17,26,.78) !important;
+  color: var(--p-text) !important;
+  border-color: var(--p-line) !important;
+  box-shadow: 0 18px 50px rgba(0,0,0,.18) !important;
+}
+.pionz-public .text-slate-900,
+.pionz-public .text-slate-800 { color: #f5f7fb !important; }
+.pionz-public .text-slate-700 { color: #d8deea !important; }
+.pionz-public .text-slate-600,
+.pionz-public .text-slate-500 { color: #98a2b3 !important; }
+.pionz-public .text-slate-400 { color: #8792a5 !important; }
+.pionz-public .border-slate-200,
+.pionz-public .border-slate-200\/90 { border-color: var(--p-line) !important; }
+.pionz-public .shadow-sm { box-shadow: 0 18px 50px rgba(0,0,0,.16) !important; }
+.pionz-public .rounded-3xl { border-radius: 26px !important; }
+.pionz-public .rounded-2xl { border-radius: 18px !important; }
+.pionz-public .rounded-xl { border-radius: 14px !important; }
+.pionz-public button:hover { transform: translateY(-1px); }
+.pionz-public .bg-\[\#08499f\] { background: linear-gradient(135deg,#7357ff,#5b46d8) !important; }
+.pionz-public .hover\:bg-\[\#063980\]:hover { background: linear-gradient(135deg,#8a73ff,#654ee9) !important; }
+.pionz-public .text-\[\#08499f\] { color: #a995ff !important; }
+.pionz-public .bg-gradient-to-r.from-blue-900 { background: linear-gradient(135deg,#15102f,#21165a 52%,#0f243b) !important; }
+.pionz-public input,
+.pionz-public select,
+.pionz-public textarea {
+  background: rgba(255,255,255,.035) !important;
+  border-color: var(--p-line) !important;
+  color: #f8fafc !important;
+}
+.pionz-public input::placeholder { color: #667085 !important; }
+.pionz-public .bg-slate-900\/90 { background: rgba(10,14,23,.92) !important; }
+.pionz-public .bg-slate-900\/80 { background: rgba(10,14,23,.8) !important; }
+.pionz-public .bg-emerald-600 { background: #16a36f !important; }
+
+/* product cards */
+.pionz-public .group.relative.flex.flex-col.bg-\[\#101726\] {
+  background: linear-gradient(180deg,#101622,#0b0f18) !important;
+  border: 1px solid rgba(255,255,255,.07) !important;
+  box-shadow: 0 14px 34px rgba(0,0,0,.22) !important;
+}
+.pionz-public .group.relative.flex.flex-col.bg-\[\#101726\]:hover {
+  border-color: rgba(124,92,255,.45) !important;
+  box-shadow: 0 20px 48px rgba(0,0,0,.34), 0 0 30px rgba(124,92,255,.08) !important;
+}
+
+/* hero breathing room */
+.pionz-public > main > div { animation: pionzPageIn .45s ease both; }
+@keyframes pionzPageIn { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:none; } }
+
+/* mobile polish */
+@media (max-width: 640px) {
+  .pionz-public .max-w-7xl { max-width: 100%; }
+  .pionz-public .grid.grid-cols-2 { gap: 10px !important; }
+  .pionz-public .p-6 { padding: 18px !important; }
+}
+
+
+/* Compact account specs on phones */
+@media (max-width: 640px) {
+  .pionz-public .pionz-key-specs {
+    gap: 4px !important;
+    margin-bottom: 8px !important;
+  }
+  .pionz-public .pionz-key-specs > span {
+    padding: 4px 6px !important;
+    border-radius: 7px !important;
+    font-size: 8.5px !important;
+    line-height: 1.1 !important;
+    max-width: 100% !important;
+  }
+  .pionz-public .group.relative.flex.flex-col.bg-\[\#101726\] > .flex.flex-col.flex-1 {
+    padding: 10px !important;
+  }
+}
+
+
+/* Consistent dark controls for storefront filters */
+.pionz-public .pionz-dark-control {
+  background: #111827 !important;
+  color: #e5e7eb !important;
+  border-color: rgba(255,255,255,.09) !important;
+}
+.pionz-public .pionz-dark-control button {
+  background: transparent !important;
+  color: #9ca3af !important;
+}
+.pionz-public .pionz-dark-control button:hover {
+  background: rgba(255,255,255,.06) !important;
+  color: #fff !important;
+}
+.pionz-public .pionz-dark-control button.bg-slate-800,
+.pionz-public .pionz-dark-control button.bg-emerald-600,
+.pionz-public .pionz-dark-control button.bg-red-600 {
+  color: #fff !important;
+}
+.pionz-public select.pionz-dark-control option {
+  background: #111827 !important;
+  color: #f8fafc !important;
+}
+@media (max-width: 640px) {
+  .pionz-public .pionz-dark-control {
+    border-radius: 13px !important;
+  }
+}
+
+/* Remove remaining light storefront controls / catalog pills */
+.pionz-public .bg-blue-50,
+.pionz-public .bg-blue-50\/50,
+.pionz-public .bg-blue-100 {
+  background: #111827 !important;
+  color: #cbd5e1 !important;
+}
+.pionz-public .border-blue-200,
+.pionz-public .border-blue-200\/90 {
+  border-color: rgba(255,255,255,.09) !important;
+}
+.pionz-public .hover\:bg-blue-50:hover {
+  background: #1a2232 !important;
+}
+
+/* Extra compact product cards */
+@media (min-width: 1024px) {
+  .pionz-public .group.relative.flex.flex-col.bg-\[\#101726\] {
+    border-radius: 18px !important;
+  }
+}
+@media (max-width: 640px) {
+  .pionz-public .group.relative.flex.flex-col.bg-\[\#101726\] {
+    border-radius: 15px !important;
+  }
+  .pionz-public .group.relative.flex.flex-col.bg-\[\#101726\] .pionz-key-specs > span {
+    max-width: 48% !important;
+  }
+}
+
+
+/* Product sliders */
+.pionz-product-slider {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  overscroll-behavior-x: contain;
+}
+.pionz-product-slider::-webkit-scrollbar { display: none; }
+.pionz-product-slide { min-width: 0; }
+@media (max-width: 640px) {
+  .pionz-product-slide { width: 46vw !important; }
+}
