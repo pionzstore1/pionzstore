@@ -1,0 +1,6 @@
+{
+  "name": "Pionz Store - Jual Beli Akun Game Aman & Terpercaya",
+  "description": "Pionz Store adalah marketplace jual beli akun game Free Fire, Mobile Legends, dan game populer lainnya dengan transaksi cepat, bergaransi, dan bantuan admin.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
